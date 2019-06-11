@@ -23,14 +23,25 @@ src={this.state.album.albumCover} alt={this.state.album.title} />
 				<div id ="release-info">{this.state.album.releaseInfo}</div>
 			</div>
 		</section>
-		<table id="song-list">
+		<table id="song-list"style={{margin: "auto"}}>
 			<colgroup>
 				<col id="song-number-column" />
 				<col id="song-title-column" />
 				<col id="song-duration-column" />
 			</colgroup>
 			<tbody>
-			</tbody>
+				{
+				this.state.album.songs.map((songs, index) => 
+				<tr key ={index}>
+					<td> {(index+1)}
+					</td>
+	 				<td >{songs.title}
+					</td>
+					<td>{songs.duration}
+					</td>
+				</tr>
+			)}
+			 </tbody>
 		</table>
 	</section>
 	);
