@@ -10,8 +10,9 @@ class Album extends Component {
 	this.state ={
 		album: album,
 		currentSong: album.songs[0],
-		isPlaying: false
-	};
+		isPlaying: false,
+		hover: false
+		};
 	this.audioElement = document.createElement('audio');
 	this.audioElement.src = album.songs[0].audioSrc;
 }
@@ -27,18 +28,32 @@ class Album extends Component {
 		this.audioElement.src = song.audioSrc;
 		this.setState({ currentSong: song});
 }
+	hoverOn(song) {
+		this.setState({hover: song});
+}
+	hoverOff(song) {
+		this.setState({hover: null});
+}
+	showIcon(song, i) {
+		const isSameSong= this.state.currentsong ===song;
+			if((this.state.hover===song && !isSameSong) || 
+(!this.state.isPlaying && isSameSong)) {
+		return <span className='icon ion-md-play'></span>
+		} else if (this.state.isPlaying && isSameSong) {
+			return <span className = 'icon ion-md-pause'></span>
+		} else {
+			return i+1;
+}
+}
 	handleSongClick(song) {
-		console.log("handleSongClick method");
 		const isSameSong = this.state.currentSong === song;
 		if (this.state.isPlaying && isSameSong) {
-			console.log("This works");
 			this.pause();
 			} else {
 				if (!isSameSong) {this.setSong(song); }
 				this.play();
 			}
 }
-
 	render() {
 	return (
 	<section className="album">
@@ -57,12 +72,20 @@ src={this.state.album.albumCover} alt={this.state.album.title} />
 				<col id="song-title-column" />
 				<col id="song-duration-column" />
 			</colgroup>
+
 			<tbody>
 				{
 				this.state.album.songs.map((song, index) => 
 				<tr className="song" key ={index} 
-onClick={ () => this.handleSongClick(song) } >
-					<td> {(index+1)}
+onClick={ () => this.handleSongClick(song)} 
+onMouseEnter={ () => this.hoverOn(song)} 
+onMouseLeave={ () => this.hoverOff()} 
+>
+					<td className="song-options"> 
+						<button>
+						{this.showIcon(song, 
+index)}
+						</button>
 					</td>
 	 				<td >{song.title}
 					</td>
@@ -75,7 +98,6 @@ onClick={ () => this.handleSongClick(song) } >
 	</section>
 	);
 }
-
 }
 export default Album;
 
