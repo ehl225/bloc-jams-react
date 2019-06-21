@@ -2,7 +2,7 @@ export default [{
   title: 'The Colors',
   artist: 'Pablo Picasso',
   releaseInfo: '1909 Spanish Records',
-  albumCover: 'public/assets/images/album_covers/01.jpg',
+  albumCover: '/assets/images/album_covers/01.jpg',
   slug: 'the-colors',
   songs: [
       { title: 'Blue', duration: '161.71', audioSrc: 
@@ -20,7 +20,7 @@ export default [{
     title: 'The Telephone',
     artist: 'Guglielmo Marconi',
     releaseInfo: '1909 EM',
-    albumCover: 'public/assets/images/album_covers/02.jpg',
+    albumCover: '/assets/images/album_covers/02.jpg',
     slug: 'the-telephone',
     songs: [
       { title: 'Blue', duration: '161.71', audioSrc: 

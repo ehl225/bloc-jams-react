@@ -35,11 +35,13 @@ class Album extends Component {
 		this.setState({hover: null});
 }
 	showIcon(song, i) {
-		const isSameSong= this.state.currentsong ===song;
+		const isSameSong= this.state.currentSong === song;
 			if((this.state.hover===song && !isSameSong) || 
-(!this.state.isPlaying && isSameSong)) {
+(this.state.hover===song && isSameSong && !this.state.isPlaying)) {
 		return <span className='icon ion-md-play'></span>
-		} else if (this.state.isPlaying && isSameSong) {
+		} else if ((this.state.hover===song && this.state.isPlaying 
+&& isSameSong))
+			{
 			return <span className = 'icon ion-md-pause'></span>
 		} else {
 			return i+1;
