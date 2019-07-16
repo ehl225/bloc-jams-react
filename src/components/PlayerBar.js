@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import AlbumStyles from './Album.css';
 
 class PlayerBar extends Component {
 	render() {
@@ -34,8 +35,8 @@ className="current-time">{this.props.formatTime(this.props.currentTime)}</div>
 className="total-time">{this.props.formatTime(this.props.duration)}</div>
 			</section>
 			< section id="volume-control">
-				<div className="icon ion-volume-low">
-				</div>
+				<button className="icon ion-md-volume-low">
+				</button>
 				<input type="range" 
 					className="volume-bar" 
 					min = "0"
@@ -45,7 +46,7 @@ className="total-time">{this.props.formatTime(this.props.duration)}</div>
 "0.01"} 
 					onChange={this.props.handleVolumeChange}
 					/>
-				<div className="icon ion-volume-high"></div>
+				<button className="icon ion-md-volume-high"></button>
 			</section>
 			</section>
 			);

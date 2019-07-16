@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import albumData from './../data/albums';
 import PlayerBar from './PlayerBar';
+import AlbumStyles from './Album.css';
 
 class Album extends Component {
 	constructor(props) {
@@ -148,7 +149,7 @@ onMouseLeave={ () => this.hoverOff()}
 index)}
 						</button>
 					</td>
-	 				<td >{song.title}
+	 				<td className="song-titles">{song.title}
 					</td>
 					<td className =
 "song-duration">{this.formatTime(parseFloat(song.duration))}

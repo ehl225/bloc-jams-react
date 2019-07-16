@@ -1,0 +1,26 @@
+.album {border: solid;
+	border-color: #FFB6C1;
+	width: 100%;
+	height: 600px}
+#album-cover-art {height: 500px;
+		width: 500px; 
+		padding: 40px 0px;
+		float: left;
+		display: inline-block;}
+.album-details { color: #FFE4E1;
+		display: inline-block;
+		position: center; }
+#album-title {font-size: 50px;}
+.artist {font-size: 30px}
+#release-info {font-size: 25px}
+.song {color: #FFE4E1;}
+#song-list {color: #FFE4E1;}
+.song-options {color: #FFE4E1;
+		position: right;}
+.song-titles {color: #FFE4E1;
+		font-size: 25px}
+.song-duration {color: #FFE4E1;
+		font-size: 25px;}
+.player-bar {float: center;}
+.current-time {color: #FFE4E1;}
+.total-time {color: #FFE4E1;}

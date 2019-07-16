@@ -1,0 +1,31 @@
+.row {display: inline-block;
+	width: 100%;
+	border-left: 10px solid #FFB6C1;
+	border-right: 4px solid #FFE4E1;
+	border-top: 4px solid #FFE4E1;
+	border-bottom: 4px solid #FFE4E1;	
+	font-family: Arial, Helvetica, sans-serif;
+	padding: 50px;}
+
+img {height:220px; 
+	width:220px; 
+	float: left;
+	padding: 30px 0px;
+	display: inline;
+		}
+.albumInfo {width: 70%;
+		float: right;
+		padding: 30px 0;
+	}
+.albumTitle {text-align: left;
+		color: #FFB6C1;
+		font-size: 75px;
+		}
+.albumArtist {text-align: left;
+		color: #FFB6C1;
+		font-size: 40px;
+		}
+.albumSongs {text-align: left; 
+		color: #FFB6C1;
+		font-size: 30px; 
+		}
